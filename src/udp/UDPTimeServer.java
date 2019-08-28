@@ -25,9 +25,6 @@ public class UDPTimeServer {
 				socket.receive(receivePacket); //blocking
 				
 				//3. data 처리(확인)
-//				byte[] data = receivePacket.getData();
-//				int length = receivePacket.getLength();
-//				String message = new String(data, 0, length, "UTF-8");
 				SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a");
 				String message = format.format(new Date());
 				System.out.println("[UDP Time Server] received:" + message);
