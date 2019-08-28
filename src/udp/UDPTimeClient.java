@@ -49,9 +49,6 @@ public class UDPTimeClient {
 					DatagramPacket receivePacket = new DatagramPacket(new byte[UDPTimeServer.BUFFER_SIZE], UDPTimeServer.BUFFER_SIZE);
 					socket.receive(receivePacket); //blocking
 					
-//					byte[] data = receivePacket.getData();
-//					int length = receivePacket.getLength();
-	//				message = new String(data, 0, length, "UTF-8");
 					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss a");
 					message = format.format(new Date());
 					System.out.println("<<" + message);
