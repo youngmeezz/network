@@ -17,14 +17,12 @@ public class ChatServerThread extends Thread {
 	String nickname;
 	List<PrintWriter> pwList;
 
-	
 	//소켓에서 생성자 만들어서 파라미터 받아올때 socket이랑 pwList만 쓰는 이유가 뭐지? -> socket만 받아오고 아직 내용
 	ChatServerThread(Socket socket, List<PrintWriter> pwList) throws UnsupportedEncodingException, IOException {
 		this.socket = socket;
 		this.pwList = pwList;
 		this.doJoin();
 	}
-
 	
 	@Override
 	public void run() {
@@ -77,7 +75,6 @@ public class ChatServerThread extends Thread {
 
 		this.broadcast(this.nickname + "님이 퇴장하셨습니다.");// 클라이언트 채팅방에 2명 모두 등장한다구 하지 않았나??
 
-		
 		//Quit하는 순간 socket닫아야 함
 		if (this.socket != null && !this.socket.isClosed()) {
 			try {
